@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 2.50f;
-    public float jumpForce = 10f;
+    [SerializeField]private float speed = 2.50f;
+    [SerializeField]private float jumpForce = 10f;
+    [SerializeField] private float scaleUpIncrement = 1.2f;
+    [SerializeField] private float scaleDownIncrement = 0.85f;
     private Rigidbody2D rigidBody2D;
     private bool isGrounded = true;
     private float movementInput;
@@ -48,6 +50,18 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Platforms")) // Ensure your ground objects have the tag "Ground"
         {
             isGrounded = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("ScoreObject"))
+        {
+            transform.localScale *= scaleUpIncrement;
+        }
+        if (collision.CompareTag("Bomb"))
+        {
+            transform.localScale *= scaleDownIncrement;
         }
     }
 }

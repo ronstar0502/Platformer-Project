@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platforms
+  - ScoreObject
+  - Bomb
   layers:
   - Default
   - TransparentFX

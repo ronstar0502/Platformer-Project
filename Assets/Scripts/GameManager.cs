@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject foodPrefab, bombPrefab;
+    [SerializeField] private GameObject boxPrefab, bombPrefab;
     [SerializeField] private float spawnDelay;
     [SerializeField]private Vector3 spawnPosition;
-    private float lastSpawnTime;
+    private float lastBoxSpawnTime;
+    private float lastBombSpawnTime;
     private Spawner spawner;
     void Start()
     {
@@ -16,12 +17,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // Assuming spawnDelay is defined elsewhere in your class
-        lastSpawnTime = AttemptSpawn(foodPrefab, lastSpawnTime, spawnDelay);
-        
+        lastBoxSpawnTime = AttemptSpawn(boxPrefab, lastBoxSpawnTime, spawnDelay);
+        lastBombSpawnTime = AttemptSpawn(bombPrefab, lastBombSpawnTime, spawnDelay*Random.Range(1.5f,4f));
     }
 
-    // Method to attempt spawning an object and return the updated last spawn time
     float AttemptSpawn(GameObject prefab, float lastSpawnTime, float delay)
     {
         if (lastSpawnTime + delay < Time.time)
