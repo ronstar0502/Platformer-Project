@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5590949433395447257}
   - component: {fileID: 4834599903267885404}
   - component: {fileID: 3932524729729467765}
+  - component: {fileID: -3463287580947048329}
   m_Layer: 0
   m_Name: Box
   m_TagString: ScoreObject
@@ -158,3 +159,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.375, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-3463287580947048329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371342922291079127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 881a1ab0b8807d04aa76be2cda736de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

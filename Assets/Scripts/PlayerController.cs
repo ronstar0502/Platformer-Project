@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]private float speed = 2.50f;
     [SerializeField]private float jumpForce = 10f;
-    [SerializeField] private float scaleUpIncrement = 1.2f;
-    [SerializeField] private float scaleDownIncrement = 0.85f;
+    public float scaleUpIncrement = 1.2f;
+    public float scaleDownIncrement = 0.85f;
     private Rigidbody2D rigidBody2D;
     private bool isGrounded = true;
     private float movementInput;
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("ScoreObject"))
         {
@@ -63,5 +63,5 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale *= scaleDownIncrement;
         }
-    }
+    }*/
 }

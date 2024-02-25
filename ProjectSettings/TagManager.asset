@@ -7,6 +7,7 @@ TagManager:
   - Platforms
   - ScoreObject
   - Bomb
+  - DestroyZone
   layers:
   - Default
   - TransparentFX

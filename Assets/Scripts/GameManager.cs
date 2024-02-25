@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -25,11 +23,11 @@ public class GameManager : MonoBehaviour
     {
         if (lastSpawnTime + delay < Time.time)
         {
-            spawnPosition.x = Random.Range(-6f,6f);
-            spawner.Spawn(prefab,spawnPosition); // Assuming this method is defined elsewhere
-            return Time.time; // Update the last spawn time
+            spawnPosition.x = Random.Range(-6f,6f);         
+            spawner.Spawn(prefab,spawnPosition); 
+            return Time.time; 
         }
-        return lastSpawnTime; // No spawn, return the old time
+        return lastSpawnTime; 
     }
 
 
