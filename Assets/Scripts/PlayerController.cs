@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidBody2D;
     private bool isGrounded = true;
     private float movementInput;
+
+    public int score;
     void Start()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
@@ -51,6 +53,11 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+
+    public void UpdateScore(int newScore)
+    {
+        score = newScore;
     }
 
     /*private void OnTriggerEnter2D(Collider2D collision)

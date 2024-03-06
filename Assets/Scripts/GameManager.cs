@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private float lastBoxSpawnTime;
     private float lastBombSpawnTime;
     private Spawner spawner;
+
     void Start()
     {
         spawner = GetComponent<Spawner>();

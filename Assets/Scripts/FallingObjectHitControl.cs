@@ -13,10 +13,12 @@ public class FallingObjectHitControl : MonoBehaviour
             if (this.CompareTag("ScoreObject"))
             {
                 player.transform.localScale *= player.scaleUpIncrement;
+                player.UpdateScore(player.score+1);
             }
             if (this.CompareTag("Bomb"))
             {
                 player.transform.localScale *= player.scaleDownIncrement;
+                player.UpdateScore(player.score - 1);
             }
             Destroy(this.gameObject);
         }
