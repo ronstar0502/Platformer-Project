@@ -18,7 +18,7 @@ public class FallingObjectHitControl : MonoBehaviour
             if (this.CompareTag("Bomb"))
             {
                 player.transform.localScale *= player.scaleDownIncrement;
-                player.UpdateScore(player.score - 1);
+                player.UpdateHealth();
             }
             Destroy(this.gameObject);
         }

@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = true;
     private float movementInput;
 
+    public int healthPoints = 3;
+    public bool isDead = false;
     public int score;
     void Start()
     {
@@ -58,6 +60,14 @@ public class PlayerController : MonoBehaviour
     public void UpdateScore(int newScore)
     {
         score = newScore;
+    }
+    public void UpdateHealth()
+    {
+        healthPoints--;
+        if (healthPoints == 0)
+        {
+            isDead = true;
+        }
     }
 
     /*private void OnTriggerEnter2D(Collider2D collision)
