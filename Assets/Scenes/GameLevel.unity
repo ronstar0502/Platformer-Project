@@ -9116,6 +9116,7 @@ GameObject:
   - component: {fileID: 2105753116}
   - component: {fileID: 2105753119}
   - component: {fileID: 2105753120}
+  - component: {fileID: 2105753121}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -9151,7 +9152,9 @@ MonoBehaviour:
   boxPrefab: {fileID: 1371342922291079127, guid: 56362b8726bb1274b82d4e7da3ebbb66, type: 3}
   bombPrefab: {fileID: 6534965496338809148, guid: 39cfdc3738a8ff543b9d838f210004d8, type: 3}
   spawnDelay: 1
-  spawnPosition: {x: 0, y: 9, z: 0}
+  spawnPosition: {x: 0, y: 10, z: 0}
+  maxBoxSpawnAmount: 5
+  maxBombSpawnAmount: 4
   scoreGoal: 10
   victoryScreen: {fileID: 3405124}
   defeatScreen: {fileID: 824800940}
@@ -9196,6 +9199,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 367095554}
+--- !u!114 &2105753121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105753115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4ff0f304ed35845b3e4292926062e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2107433713
 GameObject:
   m_ObjectHideFlags: 0

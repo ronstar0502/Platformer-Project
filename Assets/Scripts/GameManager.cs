@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,8 +6,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject boxPrefab, bombPrefab;
     [SerializeField] private float spawnDelay;
     [SerializeField]private Vector3 spawnPosition;
-    private float lastBoxSpawnTime;
-    private float lastBombSpawnTime;
+    private float lastBoxSpawnTime, lastBombSpawnTime;
+    [SerializeField]private int maxBoxSpawnAmount, maxBombSpawnAmount;
+
     private Spawner spawner;
 
     [SerializeField] private int scoreGoal = 10;
@@ -24,22 +26,29 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        lastBoxSpawnTime = AttemptSpawn(boxPrefab, lastBoxSpawnTime, spawnDelay);
-        lastBombSpawnTime = AttemptSpawn(bombPrefab, lastBombSpawnTime, spawnDelay*Random.Range(1.5f,4f));
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            spawner.DestroyAllObjects();
+        }
+
+        lastBoxSpawnTime = AttemptSpawn(boxPrefab, lastBoxSpawnTime, spawnDelay ,Random.Range(1,maxBoxSpawnAmount));
+        lastBombSpawnTime = AttemptSpawn(bombPrefab, lastBombSpawnTime, spawnDelay*Random.Range(1.5f,4f),Random.Range(1,maxBombSpawnAmount));
 
         IsLevelFinished();
+
     }
 
-    private float AttemptSpawn(GameObject prefab, float lastSpawnTime, float delay)
+    private float AttemptSpawn(GameObject prefab, float lastSpawnTime, float delay , int spawnAmount)
     {
         if (lastSpawnTime + delay < Time.time)
-        {
-            spawnPosition.x = Random.Range(-6f,6f);         
-            spawner.Spawn(prefab,spawnPosition); 
+        {                       
+            spawner.Spawn(prefab,spawnPosition,spawnAmount); 
             return Time.time; 
         }
         return lastSpawnTime; 
     }
+
+
     private void IsLevelFinished()
     {
         if (player.isDead)

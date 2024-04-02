@@ -103,7 +103,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1.6
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5ca33bb6616e9c64c903682b0c0783a3, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -173,3 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4.5
   jumpForce: 10
+  scaleUpIncrement: 1.2
+  scaleDownIncrement: 0.85
+  healthPoints: 3
+  isDead: 0
+  score: 0
