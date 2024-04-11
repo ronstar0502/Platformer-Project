@@ -31,11 +31,16 @@ public class GameManager : MonoBehaviour
             spawner.DestroyAllObjects();
         }
 
-        lastBoxSpawnTime = AttemptSpawn(boxPrefab, lastBoxSpawnTime, spawnDelay ,Random.Range(1,maxBoxSpawnAmount));
-        lastBombSpawnTime = AttemptSpawn(bombPrefab, lastBombSpawnTime, spawnDelay*Random.Range(1.5f,4f),Random.Range(1,maxBombSpawnAmount));
+        AttemptSpawnObjects();
 
         IsLevelFinished();
 
+    }
+
+    private void AttemptSpawnObjects()
+    {
+        lastBoxSpawnTime = AttemptSpawn(boxPrefab, lastBoxSpawnTime, spawnDelay, Random.Range(1, maxBoxSpawnAmount));
+        lastBombSpawnTime = AttemptSpawn(bombPrefab, lastBombSpawnTime, spawnDelay * Random.Range(1.5f, 4f), Random.Range(1, maxBombSpawnAmount));
     }
 
     private float AttemptSpawn(GameObject prefab, float lastSpawnTime, float delay , int spawnAmount)
