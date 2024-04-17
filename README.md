@@ -8,9 +8,8 @@ Platformer Project is a Platformer game.
 [![Watch the video](http://img.youtube.com/vi/3XoXsdJFLGg/0.jpg)](https://www.youtube.com/watch?v=3XoXsdJFLGg)
 
 ## Screenshots
-![Eat  it Frank1](https://github.com/ronstar0502/Platformer-Project/assets/102975645/518b2e40-f684-4671-838d-e232dd551384)
-![Eat it Frank2](https://github.com/ronstar0502/Platformer-Project/assets/102975645/5e4990e8-0646-4064-8527-9a9309593cff)
-
+![Eat  it Frank1](https://github.com/ronstar0502/Platformer-Project/assets/102975645/cc669c28-3203-4078-888c-c87265ca863d)
+![Eat it Frank2](https://github.com/ronstar0502/Platformer-Project/assets/102975645/7d85bf4a-ba23-468f-b48f-54f8fae8af08)
 
 
 ## How to Download
